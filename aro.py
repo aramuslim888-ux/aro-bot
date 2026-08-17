@@ -14,7 +14,7 @@ async def download_video(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 'format': 'best',
                 'outtmpl': file_name,
                 'quiet': True,
-                'extractor-args': {'tiktok': {'web_app': True}}
+                'no_warnings': True,
             }
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([text])
